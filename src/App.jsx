@@ -6,12 +6,10 @@ import InstagramGrid from './components/InstagramGrid';
 import ShopInfo from './components/ShopInfo';
 import CakesAndPies from './components/CakesAndPies';
 import Footer from './components/Footer';
-import AiFlavorSommelierModal from './components/AiFlavorSommelierModal';
 import OrderSuccessModal from './components/OrderSuccessModal';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home'); // 'home' or 'cakes-catering'
-  const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [completedOrder, setCompletedOrder] = useState(null);
   const [preselectedFlavors, setPreselectedFlavors] = useState(null);
 
@@ -45,13 +43,6 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // When AI Sommelier generates a pair
-  const handleAiPairingForCake = ({ layer1, layer2 }) => {
-    setPreselectedFlavors({ layer1, layer2 });
-    setActiveTab('cakes-catering');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   const handleOrderCakeSuccess = (orderData) => {
     setCompletedOrder(orderData);
   };
@@ -78,7 +69,6 @@ export default function App() {
       <Navbar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        onOpenAiModal={() => setIsAiModalOpen(true)}
       />
 
       {/* Main Page Content */}
@@ -89,13 +79,11 @@ export default function App() {
             <Hero
               onScrollToFlavors={handleScrollToFlavors}
               onGoToCakes={handleGoToCakes}
-              onOpenAiModal={() => setIsAiModalOpen(true)}
             />
 
             {/* Page 1: Live Flavor Board */}
             <LiveFlavorBoard
               onSelectForCake={handleSelectFlavorForCake}
-              onOpenAiModal={() => setIsAiModalOpen(true)}
             />
 
             {/* Page 1: Instagram Integration Block */}
@@ -116,13 +104,6 @@ export default function App() {
 
       {/* Global Footer */}
       <Footer onNavClick={handleFooterNav} />
-
-      {/* AI Irish Flavor Sommelier Modal */}
-      <AiFlavorSommelierModal
-        isOpen={isAiModalOpen}
-        onClose={() => setIsAiModalOpen(false)}
-        onSelectPairingForCake={handleAiPairingForCake}
-      />
 
       {/* Order & Catering Success / Confetti Confirmation Modal */}
       <OrderSuccessModal

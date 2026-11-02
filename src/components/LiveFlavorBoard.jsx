@@ -3,7 +3,7 @@ import { Sparkles, RefreshCw, Filter, Award, ShieldCheck, Heart, X, Check, Arrow
 import { FLAVORS } from '../data/creameryData';
 import FlavorCard from './FlavorCard';
 
-export default function LiveFlavorBoard({ onSelectForCake, onOpenAiModal }) {
+export default function LiveFlavorBoard({ onSelectForCake }) {
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedFlavorModal, setSelectedFlavorModal] = useState(null);
 
@@ -39,17 +39,6 @@ export default function LiveFlavorBoard({ onSelectForCake, onOpenAiModal }) {
           <p className="text-base sm:text-lg text-stone-600 font-normal leading-relaxed">
             We rotate our flavors weekly to bring you fresh, artisanal creations. Here is what is fresh in the dip cabinet right now!
           </p>
-
-          {/* AI Recommender Quick Button */}
-          <div className="pt-2">
-            <button
-              onClick={onOpenAiModal}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-celtic-800 to-celtic-950 hover:from-celtic-900 hover:to-black text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all transform hover:scale-105"
-            >
-              <Sparkles className="w-4 h-4 text-amber-300 animate-bounce" />
-              <span>Ask AI Sommelier: Match My Flavor Craving ☘️</span>
-            </button>
-          </div>
         </div>
 
         {/* Filter Controls Bar */}

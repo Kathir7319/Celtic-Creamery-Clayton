@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles, Award, ShieldCheck, Heart, Clock, Check, Utensils
 import { SHOP_INFO, FLAVORS } from '../data/creameryData';
 import CreameryImage from './CreameryImage';
 
-export default function Hero({ onScrollToFlavors, onGoToCakes, onOpenAiModal }) {
+export default function Hero({ onScrollToFlavors, onGoToCakes }) {
   // Interactive mini cone scoop stacker
   const [coneScoops, setConeScoops] = useState(['#FBF3D5', '#DEC7B2', '#E4B882']);
   const [selectedScoopName, setSelectedScoopName] = useState('3-Scoop Celtic Flight');
@@ -86,22 +86,6 @@ export default function Hero({ onScrollToFlavors, onGoToCakes, onOpenAiModal }) 
                 <span className="text-[11px] bg-amber-950 text-amber-200 px-2 py-0.5 rounded-full uppercase tracking-wider font-extrabold">
                   48h Notice
                 </span>
-              </button>
-            </div>
-
-            {/* AI Assistant Quick Pill Banner */}
-            <div className="pt-2 flex justify-center lg:justify-start">
-              <button
-                onClick={onOpenAiModal}
-                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-2xl bg-white/90 hover:bg-white border border-celtic-300 shadow-soft text-stone-700 hover:text-celtic-900 transition-all text-xs sm:text-sm text-left group"
-              >
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center text-amber-950 shrink-0 group-hover:rotate-12 transition-transform shadow-xs">
-                  <Sparkles className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="font-bold text-celtic-950 block sm:inline">Can't decide on a flavor?</span>{' '}
-                  <span className="text-celtic-800 underline font-semibold">Ask our AI Irish Flavor Sommelier &rarr;</span>
-                </div>
               </button>
             </div>
 

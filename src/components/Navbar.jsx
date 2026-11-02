@@ -3,7 +3,7 @@ import { Sparkles, Phone, MapPin, Clock, Menu, X, ShoppingBag, Calendar } from '
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 import { SHOP_INFO } from '../data/creameryData';
 
-export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
+export default function Navbar({ activeTab, setActiveTab }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpenNow, setIsOpenNow] = useState(true);
@@ -143,15 +143,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
             {/* Desktop Action Buttons */}
             <div className="hidden lg:flex items-center gap-3">
               <button
-                onClick={onOpenAiModal}
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs font-bold text-celtic-950 bg-celtic-100 hover:bg-celtic-200 border border-celtic-300 transition-all hover:scale-105 shadow-xs"
-                title="AI Irish Flavor Matchmaker"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-celtic-700 animate-spin-slow" />
-                <span>AI Flavor Sommelier</span>
-              </button>
-
-              <button
                 onClick={() => handleNavClick('cakes-catering')}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white bg-gradient-to-r from-celtic-800 to-celtic-950 hover:from-celtic-900 hover:to-black shadow-md hover:shadow-lg transition-all transform active:scale-95"
               >
@@ -160,16 +151,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
               </button>
             </div>
 
-            {/* Mobile Hamburger & Quick AI Button */}
+            {/* Mobile Hamburger Button */}
             <div className="flex md:hidden items-center gap-2">
-              <button
-                onClick={onOpenAiModal}
-                className="p-2 rounded-xl bg-celtic-100 text-celtic-900 border border-celtic-300 shadow-xs"
-                aria-label="AI Sommelier"
-              >
-                <Sparkles className="w-5 h-5 text-celtic-700" />
-              </button>
-
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="p-2 rounded-xl bg-cream-200 text-stone-900 hover:bg-cream-300 transition-colors border border-cream-300"
@@ -208,17 +191,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenAiModal }) {
                 <span className="text-xs bg-amber-400 text-amber-950 font-extrabold px-2 py-0.5 rounded-full">
                   Order
                 </span>
-              </button>
-
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenAiModal();
-                }}
-                className="w-full text-left px-4 py-3 rounded-2xl font-bold text-sm bg-gradient-to-r from-celtic-100 to-amber-100 text-celtic-950 border border-celtic-300 flex items-center gap-2"
-              >
-                <Sparkles className="w-4 h-4 text-celtic-700" />
-                <span>Ask AI Flavor Sommelier (Personalized Craving Match)</span>
               </button>
             </div>
 
