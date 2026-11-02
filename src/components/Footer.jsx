@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, MapPin, Mail, ArrowUp, Heart } from 'lucide-react';
 import { FacebookIcon, InstagramIcon } from './SocialIcons';
 import { SHOP_INFO } from '../data/creameryData';
+import FuturisticLogo from './FuturisticLogo';
 
 export default function Footer({ onNavClick }) {
   const scrollToTop = () => {
@@ -17,18 +18,8 @@ export default function Footer({ onNavClick }) {
           
           {/* Brand & Mission (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-2xl bg-amber-400 text-stone-950 flex items-center justify-center font-bold text-xl shadow-md">
-                🍦
-              </div>
-              <div>
-                <span className="font-serif text-2xl font-bold text-white tracking-tight">
-                  Celtic Creamery
-                </span>
-                <span className="ml-2 text-xs font-bold text-amber-400 uppercase tracking-widest px-2 py-0.5 rounded bg-celtic-900 border border-celtic-700">
-                  Clayton, NC
-                </span>
-              </div>
+            <div className="bg-stone-900/60 p-3 rounded-2xl border border-emerald-500/20 inline-block">
+              <FuturisticLogo size="md" className="[&_span]:!text-cream-100 [&_.text-emerald-600]:!text-emerald-400" />
             </div>
 
             <p className="text-cream-200/80 text-sm leading-relaxed max-w-sm">

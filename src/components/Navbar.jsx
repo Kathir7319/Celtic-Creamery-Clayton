@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Phone, MapPin, Clock, Menu, X, ShoppingBag, Calendar } from 'lucide-react';
 import { InstagramIcon, FacebookIcon } from './SocialIcons';
 import { SHOP_INFO } from '../data/creameryData';
+import FuturisticLogo from './FuturisticLogo';
 
 export default function Navbar({ activeTab, setActiveTab }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -89,27 +90,12 @@ export default function Navbar({ activeTab, setActiveTab }) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo Brand */}
+            {/* Futuristic Logo Brand */}
             <button
               onClick={() => handleNavClick('home')}
-              className="flex items-center gap-3 text-left group focus:outline-none"
+              className="flex items-center text-left group focus:outline-none transition-transform hover:scale-102"
             >
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-celtic-800 to-celtic-950 flex items-center justify-center text-amber-300 shadow-md group-hover:scale-105 transition-transform border border-amber-400/30 shrink-0">
-                <span className="text-2xl" role="img" aria-label="Clover Ice Cream">🍦</span>
-              </div>
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-xl sm:text-2xl font-extrabold tracking-tight text-celtic-950 group-hover:text-celtic-800 transition-colors">
-                    Celtic Creamery
-                  </span>
-                  <span className="text-amber-950 font-bold text-[10px] uppercase tracking-widest px-1.5 py-0.5 bg-amber-200 rounded border border-amber-300">
-                    Clayton
-                  </span>
-                </div>
-                <p className="text-xs text-stone-500 font-medium tracking-wide">
-                  Irish Ice Cream • Churned Fresh Daily
-                </p>
-              </div>
+              <FuturisticLogo size="md" />
             </button>
 
             {/* Desktop Navigation Tabs */}
